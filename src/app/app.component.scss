@@ -1,0 +1,168 @@
+.block {
+  overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to top, #ffffff, #424d6d);
+  .running-text-container {
+    position: absolute;
+    // top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    white-space: nowrap;
+    animation: slideRight 10s linear infinite;
+    z-index: 11; /* Đặt một giá trị z-index cao hơn */
+    .running-text {
+      // display: inline-block;
+      // color: black; /* Thay đổi màu chữ theo ý muốn */
+      // z-index: 12; /* Đặt một giá trị z-index cao hơn */
+      // display: inline-block;
+      // // color: #fff; /* Màu chữ trắng */
+      // font-family: 'Arial', sans-serif; /* Chọn font chữ */
+      // font-size: 2em; /* Kích thước chữ */
+      // font-weight: bold; /* Chữ đậm */
+      // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Đổ bóng chữ */
+      display: inline-block;
+      color: #ff5353;
+      font-family: 'Pacifico', cursive; /* Chọn font chữ thư pháp */
+      font-size: 2.5em; /* Kích thước chữ */
+      font-weight: bold;
+      text-transform: uppercase; /* Chuyển đổi chữ thành chữ in hoa */
+      letter-spacing: 3px; /* Khoảng cách giữa các ký tự */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Đổ bóng chữ */
+      z-index: 12;
+    }
+  }
+  .content{
+    display: flex;
+    height: calc(100vh - 400px);
+    align-items: center;
+    justify-content: center;
+    .note1{
+      color: #ffacac;
+    font-size: 16px;
+    padding-top: 100px;
+    text-align: center;
+    opacity: 0; /* Bắt đầu với opacity 0 */
+    animation: slideInFromBottom 5s ease-out forwards;
+    }
+  }
+  .footer{
+    background-image: url(../assets/image/footer-noel.png);
+    height: 400px;
+  }
+
+  .group-image{
+    animation: fadeIn 2.5s ease-out forwards;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to top, #ffffff, #424d6d);
+    .content{
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      .image{
+        &:hover{
+          animation: shake 0.5s ease-in-out;
+        }
+        .image1{
+          width: 300px;
+          height: 451px;
+          animation: fadeInImage 3s ease-out;
+        }
+        .image2{
+          width: 300px;
+          height: 400px;
+          animation: fadeInImage 3s ease-out;
+        }
+        .image3{
+          width: 300px;
+          height: 451px;
+          animation: fadeInImage 3s ease-out;
+        }
+      }
+    }
+  }
+}
+
+.display-none{
+  animation: fadeOut 2.5s ease-out forwards;
+}
+
+
+
+
+
+
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Tùy chỉnh giá trị translateY nếu cần */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
